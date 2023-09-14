@@ -17,7 +17,6 @@ const HomePage = () => {
             <input type="text" id="email" required value={uuidv4()}
               onChange={(e) => setValue(e.target.value)}
               />
-            
           </div>
           <button
             onClick={handleJoinRoom}

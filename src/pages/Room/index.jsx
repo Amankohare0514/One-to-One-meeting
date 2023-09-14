@@ -20,7 +20,7 @@ const RoomPage = () => {
                 sharedLinks: [
                     {
                         name: 'Copy Link',
-                        url: `http://localhost:3000/room/${roomId}`,
+                        url: `http://one2one:3000/room/${roomId}`,
                     },
                 ],
                 scenario: {
