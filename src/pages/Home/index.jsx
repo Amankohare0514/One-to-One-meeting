@@ -1,35 +1,30 @@
-import React, {useCallback,useState} from 'react'
+import React, { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './home.css';
+import {v4 as uuidv4} from 'uuid';
 const HomePage = () => {
-    const [value , setValue] = useState();
-    const navigate = useNavigate()
-    const handleJoinRoom = useCallback(()=>{
-        navigate(`/room/${value}`)
-    }, [navigate , value])
+  const [value, setValue] = useState();
+  const navigate = useNavigate()
+  console.log(uuidv4());
+  const handleJoinRoom = useCallback(() => {
+    navigate(`/room/${uuidv4()}`)
+  }, [navigate, uuidv4()])
   return (
-    // <div classNameName='name'>
-    //     <input  
-    //     classNameName='input'
-    //     value={value}
-    //     onChange={(e)=> setValue(e.target.value)}
-    //     type='text'
-    //     placeholder='enter room id'/> <br/>
-    //     <button onClick={handleJoinRoom}>join</button>
-    // </div>
     <div className='name'>
-    <div className="form-container">
-      <form className="form">
-        <div className="form-group">
-          <input type="text" id="email" name="email" required="" value={value} 
-          onChange={(e)=> setValue(e.target.value)}
-          placeholder='Create room id'/> 
-        </div> 
-        <button 
-        onClick={handleJoinRoom}
-        className="form-submit-btn" type="submit">Create Room</button>
-      </form>
-    </div>
+      <div className="form-container">
+        <div className="form">
+          <div className="form-group">
+            <input type="text" id="email" required value={uuidv4()}
+              onChange={(e) => setValue(e.target.value)}
+              />
+            
+          </div>
+          <button
+            onClick={handleJoinRoom}
+            className="form-submit-btn" type="submit">Create Room
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
